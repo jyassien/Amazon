@@ -43,18 +43,19 @@
 }
 
 .header__searchOption select {
-  padding: 8px 10px 8px;
+  padding: 8px 10px 8px 20px;
   border: none;
   outline: none;
   scroll-behavior: smooth;
-
   background-color: rgb(243, 238, 238);
   color: #000;
-  max-width: 60px;
+
+  max-width: 65px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .header__searchOption select:hover,
 .ArrowDropDownIcon-wrapper:hover {
   cursor: pointer;
@@ -157,12 +158,13 @@
 .header__userAccount::before {
   position: absolute;
   top: -30px;
-  left: 54%;
-  content: "ddd";
+  left: 46%;
+  content: "";
   color: black;
   opacity: 0;
   background-color: white;
-  width: 22%;
+  /* opacity: 1; */
+  width: 30%;
   padding-bottom: 30px;
 }
 .header__option_popup:hover .header__userAccount {

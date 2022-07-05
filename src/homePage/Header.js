@@ -51,12 +51,12 @@ function Header() {
         </div>
         <div className="header__search">
           <div className="header__searchOption">
-            <select id="cars">
-              <option value="volvo">All </option>
-              <option value="volvo">All Department</option>
-              <option value="opel">Alexa Skills</option>
-              <option value="saab">Amazon Devices</option>
-              <option value="audi">...</option>
+            <select id="department">
+              <option value="All">All </option>
+              <option value="All Department">All Department</option>
+              <option value="Alexa Skills">Alexa Skills</option>
+              <option value="Amazon Devices">Amazon Devices</option>
+              <option value="...">...</option>
             </select>
           </div>
           <div className=" ArrowDropDownIcon-wrapper">
