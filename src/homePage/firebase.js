@@ -3,7 +3,8 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEAW-Ks7GDIwXEwBOAHOR0EHJ8--3P3tU",
+  apiKey: process.env.REACT_APP_FIR_API_KEY,
+
   authDomain: "amazn-shop.firebaseapp.com",
   projectId: "amazn-shop",
   storageBucket: "amazn-shop.appspot.com",
