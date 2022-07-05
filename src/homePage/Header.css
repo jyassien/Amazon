@@ -1,0 +1,279 @@
+.header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+}
+.header__logo:hover,
+.header__selectLocation:hover,
+.header__flag:hover,
+.header__option:hover,
+.header__searchInput:hover {
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+.header__selectLocation div:hover {
+  border: none;
+}
+.header__logo {
+  width: 100px;
+  padding: 25px 0 0px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 5px;
+}
+.header__nav-left div {
+  display: flex;
+}
+.LocationOnOutlinedIcon {
+  color: white;
+  position: relative;
+  top: 23px;
+}
+
+.header__search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+}
+
+.header__searchOption select {
+  padding: 8px 10px 8px;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+
+  background-color: rgb(243, 238, 238);
+  color: #000;
+  max-width: 60px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.header__searchOption select:hover,
+.ArrowDropDownIcon-wrapper:hover {
+  cursor: pointer;
+  background-color: rgb(218, 211, 211);
+}
+.search_ArrowDropDownIcon {
+  color: #131921;
+
+  padding-top: 4px;
+  margin-left: -30px;
+}
+.ArrowDropDownIcon-wrapper {
+  height: 31px;
+  background-color: rgb(243, 238, 238);
+}
+.header__searchInput {
+  height: 11px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+.header__searchIcon {
+  padding: 5px;
+  height: 22px !important;
+  color: #000;
+  background-color: #eebe7f;
+  cursor: pointer;
+}
+.header__searchIcon:hover {
+  background-color: #df9b42;
+}
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+.header__option:nth-child(1) {
+  width: 100px;
+}
+.header__nav-right,
+.header__nav-left {
+  display: flex;
+  justify-content: space-evenly;
+}
+.header__flag img {
+  padding-left: 15px;
+  height: 18px;
+  width: 30px;
+}
+.ArrowDropDownIcon {
+  position: relative;
+  top: 6px;
+}
+.header__language {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 65px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+}
+.header__nav-left .header__option {
+  margin: auto 15px auto 0;
+}
+.header__optionLineOne {
+  font-size: 10px;
+}
+.header__optionLineTwo {
+  font-size: 13px;
+  font-weight: 800;
+}
+.header__userAccount {
+  color: #000;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: absolute;
+  left: 56%;
+  top: 70px;
+  width: 440px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.header__userAccount::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: -24px;
+  right: 22.5%;
+  transform: rotateZ(45deg) translateY(20px);
+}
+.header__userAccount::before {
+  position: absolute;
+  top: -30px;
+  left: 54%;
+  content: "ddd";
+  color: black;
+  opacity: 0;
+  background-color: white;
+  width: 22%;
+  padding-bottom: 30px;
+}
+.header__option_popup:hover .header__userAccount {
+  display: flex;
+}
+.header__userSignedOut {
+  display: contents;
+  justify-content: center;
+}
+.header__userAccount button {
+  background-color: #f8bc6c;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 10px 80px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.header__userAccount p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.header__userAccount p .link {
+  text-decoration: none !important;
+}
+.header__accountList {
+  background-color: white;
+  border: 1px solid grey;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.header__accountList div {
+  margin: 10px 0px 40px;
+  width: 40%;
+}
+.header__accountList h3 {
+  margin: 10px 0;
+}
+
+.header__accountList1,
+.header__accountList2 {
+  line-height: 2em;
+  font-size: 12px;
+  list-style: none;
+}
+.header__accountList1 li:hover,
+.header__accountList2 li:hover {
+  text-decoration: underline;
+  color: orange;
+}
+.header__accountList2_signout {
+  font-weight: 500;
+  background-color: #f2eadf;
+}
+.AddShoppingCartTwoToneIcon {
+  padding-right: 40px;
+  margin-top: -10px;
+}
+.header__itemsNumber {
+  position: relative;
+  left: 10%;
+  top: 0px;
+  width: 12px;
+  height: 16px;
+  font-weight: 700;
+  padding-bottom: 4px;
+  color: goldenrod;
+  border-radius: 4px;
+  background-color: #131921;
+}
+.header__itemsNumber::after {
+  content: "Cart";
+  position: relative;
+  left: 4px;
+  top: 14px;
+  color: #fff;
+}
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.header__clearlink {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* ////////// Bottom Navigation//////////// */
+.headerBottom {
+  height: 20px;
+  background-color: #112e55;
+  color: #fff;
+  padding: 4px;
+}
+.headerBottom__nav {
+  display: flex;
+  justify-content: space-between;
+
+  list-style: none;
+}
+.headerBottom__nav > li {
+  font-size: 14px;
+  padding: 1px 1px 2px;
+}
+.headerBottom__nav > li:hover {
+  border: 1px solid #fff;
+}

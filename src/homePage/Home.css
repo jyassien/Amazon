@@ -1,0 +1,41 @@
+.home__container img {
+  cursor: pointer;
+}
+.home__image {
+  width: 100%;
+  /* margin-bottom: -150px; */
+  margin-bottom: -40vh;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: -1;
+}
+.home__row {
+  display: flex;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.ArrowBackIosIcon {
+  color: #fff;
+}
+.home__buttonLeft {
+  position: absolute;
+  left: -0%;
+  top: 100px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 90px 30px;
+}
+.home__buttonRight {
+  position: absolute;
+  right: -0%;
+  top: 100px;
+  transform: rotate(180deg);
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 90px 30px;
+}
+.home__buttonLeft:hover,
+.home__buttonRight:hover {
+  border: 2px white solid;
+  border-radius: 5px;
+}
