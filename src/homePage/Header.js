@@ -8,16 +8,30 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import flagUS from "../images/usflag.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { deleteDoc, doc } from "firebase/firestore";
 
 function Header() {
   const navigate = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
   const [page, refreshPage] = useState();
 
-  let user = auth.currentUser;
-  const handleAuthentication = () => {
-    auth.signOut();
+  // let user = auth.currentUser;
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, [user]);
+  const handleAuthentication = async () => {
+    await signOut(auth);
+
+    await deleteDoc(doc(db, "user", "order"));
+
+    // Delete temporarily saved orders.
+
+    // auth.signOut();
     // console.log("sign out clicked, ", auth);
     // refreshPage({});
     // navigate("/");
@@ -52,6 +66,8 @@ function Header() {
         <div className="header__search">
           <div className="header__searchOption">
             <select id="department">
+              <ArrowDropDownIcon />
+
               <option value="All">All </option>
               <option value="All Department">All Department</option>
               <option value="Alexa Skills">Alexa Skills</option>
@@ -134,7 +150,12 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className="header__option">
+          <div
+            className="header__option"
+            onClick={() => {
+              navigate("/orders");
+            }}
+          >
             <span className="header__optionLineOne">Returns</span>
             <span className="header__optionLineTwo">& Orders</span>
           </div>
@@ -153,22 +174,29 @@ function Header() {
           {/* <span className="header__optionLineTwo">Prime</span> */}
         </div>
       </div>
-      <div className="headerBottom">
-        <ul className="headerBottom__nav">
-          <li>All</li>
-          <li>Buy Again</li>
-          <li>Computers</li>
-          <li>Computer Service</li>
-          <li>Coupons</li>
-          <li>Health & Household</li>
-          <li>Pharmacy</li>
-          <li>Shopper Toolkit</li>
-          <li>Pet Supplies</li>
-          <li>Find a Gift</li>
-          <li>Home improvement</li>
-
-          <li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
-        </ul>
+      <div className="headerBottom_wrapper">
+        <div className="headerBottom">
+          <ul className="headerBottom__nav">
+            <li>
+              <div className="headerBottom_hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+            <li>All</li>
+            <li>Buy Again</li>
+            <li>Computers</li>
+            <li>Computer Service</li>
+            <li>Coupons</li>
+            <li>Health & Household</li>
+            <li>Pharmacy</li>
+            <li>Shopper Toolkit</li>
+            <li>Pet Supplies</li>
+            <li>Find a Gift</li>
+            <li>Home improvement</li>
+          </ul>
+        </div>
       </div>
     </>
   );

@@ -1,10 +1,12 @@
 /* ProductGrid Component */
 .productGrid {
   display: flex;
+
   flex-direction: column;
   margin: 10px;
   box-shadow: 0 6px 18px -9px rgba(0, 0, 0, 0.75);
-  width: 33vw;
+  width: 31.5%;
+  font-size: 12px;
   background-color: white;
   z-index: 2;
   /* height: 50vh; */
@@ -20,17 +22,19 @@
   display: flex;
   padding: 10px;
   justify-content: space-evenly;
+  height: 10vh;
+  font-size: 10px;
 }
 /* Item Component */
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
+  width: 13vw;
 }
 .item__img {
   width: 100%;
   /* width: 100px; */
-  height: 150px;
+  height: 90%;
   object-fit: contain;
 }

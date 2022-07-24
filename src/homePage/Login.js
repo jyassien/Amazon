@@ -1,38 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import "./Login.css";
+import { async } from "@firebase/util";
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  useEffect(() => {}, []);
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          navigate("/");
-          // console.log(auth);
-          // console.log(auth.user);
-        }
-      })
-      .catch((err) => alert(err.message));
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      if (user) {
+        navigate("/");
+        // window.location.pathname = "/";
+      }
+    } catch (err) {
+      alert(err.message);
+    }
+
+    // auth
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then((auth) => {
+    //     if (auth) {
+    //       navigate("/");
+    //       // console.log(auth);
+    //       // console.log(auth.user);
+    //     }
+    //   })
+    //   .catch((err) => alert(err.message));
   };
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      // console.log(user);
+      if (user) navigate("/");
+    } catch (err) {
+      alert(err.message);
+    }
 
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          navigate("/");
-        }
-      })
-      .catch((err) => alert(err.message));
+    // auth
+    //   .createUserWithEmailAndPassword(email, password)
+    //   .then((auth) => {
+    //     if (auth) {
+    //       navigate("/");
+    //     }
+    //   })
+    //   .catch((err) => alert(err.message));
   };
 
   return (

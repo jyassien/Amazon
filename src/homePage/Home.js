@@ -26,7 +26,8 @@ function Home() {
         <div ref={homeBGref} className="home__BGimages">
           <img
             className={`home__image ${index && "hide"}`}
-            src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+            src="https://m.media-amazon.com/images/I/61-5K0tIvKL._SX3000_.jpg"
+            // src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
             alt=""
           />
           <img
@@ -41,7 +42,8 @@ function Home() {
           />
           <img
             className={`home__image ${index == 3 || "hide"}`}
-            src="https://m.media-amazon.com/images/I/61zMuPjqQBL._SX3000_.jpg"
+            src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+            // src="https://m.media-amazon.com/images/I/61zMuPjqQBL._SX3000_.jpg"
             alt=""
           />
           <img
@@ -50,12 +52,14 @@ function Home() {
             alt=""
           />
         </div>
-        <button onClick={prev} className="home__buttonLeft">
-          <ArrowBackIosIcon className="ArrowBackIosIcon" />
-        </button>
-        <button onClick={next} className="home__buttonRight">
-          <ArrowBackIosIcon className="ArrowBackIosIcon" />
-        </button>
+        <div className="home__button">
+          <button onClick={prev} className="home__buttonLeft">
+            <ArrowBackIosIcon className="ArrowBackIosIcon" />
+          </button>
+          <button onClick={next} className="home__buttonRight">
+            <ArrowBackIosIcon className="ArrowBackIosIcon" />
+          </button>
+        </div>
         <div className="home__row">
           <ProductGrid
             gridTitle="Pick up where you left off"
