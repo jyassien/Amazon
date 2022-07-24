@@ -1,3 +1,15 @@
+############################################################# <br />
+                Amazon website replica.<br />
+   To view the deployed web app, use either of the following link. <br />
+   
+   https://amazn-shop.web.app/ <br/>
+   https://amazn-shop.firebaseapp.com/ <br/>
+   
+
+############################################################# <br />
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
