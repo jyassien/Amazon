@@ -40,77 +40,7 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState(true);
   const [items, setItems] = useState("");
 
-  // useEffect(() => {
-  //   // generate the special stripe secret which allows us to charge a customer
-  //   const getClientSecret = async () => {
-  //     const response = await axios({
-  //       method: "post",
-  //       // Stripe expects the total in a currencies subunits
-  //       url: `http://localhost:5005/amazn-shop/us-central1/api/payments/create?total=${
-  //         getBasketTotal(basket) * 100
-  //       }`,
-  //     });
-  //     setClientSecret(response.data.clientSecret);
-  //   };
 
-  //   getClientSecret();
-  // }, [basket]);
-
-  // console.log("THE SECRET IS >>>", clientSecret);
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   setProcessing(true);
-
-  //   const payload = await stripe
-  //     .confirmCardPayment(clientSecret, {
-  //       payment_method: {
-  //         card: elements.getElement(CardElement),
-  //       },
-  //     })
-  //     .then(({ paymentIntent }) => {
-  //       // paymentIntent = payment confirmation
-  //       // ////////////////////////////////
-  //       // const usersCollectionRef = collection(db, "users");
-  //       // // Grab and attach 'users' collection from the databas(db)
-  //       // const userDoc = doc(db, "users", id);
-  //       // // doc: creates an instance of a document.
-  //       // await addDoc(usersCollectionRef, { name: newName, age: Number(newAge) });
-
-  //       // ////////////////////////////////
-  //       // const messageRef = doc(db, "collection", "document", "subCollection", "subDocument");
-  //       const userRef = doc(db, "users", user?.uid, "orders", paymentIntent.id);
-
-  //       const setUserCollection = async () => {
-  //         await setDoc(userRef, {
-  //           basket: basket,
-  //           amount: paymentIntent.amount,
-  //           created: paymentIntent.created,
-  //         });
-  //       };
-  //       setUserCollection();
-
-  //       // db.collection("users")
-  //       //   .doc(user?.uid)
-  //       //   .collection("orders")
-  //       //   .doc(paymentIntent.id)
-  //       //   .set({
-  //       //     basket: basket,
-  //       //     amount: paymentIntent.amount,
-  //       //     created: paymentIntent.created,
-  //       //   });
-
-  //       setSucceeded(true);
-  //       setError(null);
-  //       setProcessing(false);
-
-  //       dispatch({
-  //         type: "EMPTY_BASKET",
-  //       });
-
-  //       navigate("/orders");
-  //     });
-  // };
 
   useEffect(() => {
     setUser(() => {
